@@ -1,0 +1,6 @@
+@eipiai_HostAddress = http://localhost:5032
+
+GET {{eipiai_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
