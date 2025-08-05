@@ -2,9 +2,9 @@
 
 namespace eipiai.InfraExtrutura
 {
-    public class LivrosRepository : IlivrosRepository
+    public class LivrosRepository : ILivrosRepository
     {
-        private ConnectionContext _context = new ConnectionContext();
+        private readonly ConnectionContext _context = new ConnectionContext();
         
         public void Add(Livros livros)
         {

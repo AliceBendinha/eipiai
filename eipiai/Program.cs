@@ -10,8 +10,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-//injeção de dependencia
-builder.Services.AddTransient<IlivrosRepository, LivrosRepository>();  
+//injeï¿½ï¿½o de dependencia
+builder.Services.AddTransient<ILivrosRepository, LivrosRepository>();
 
 var app = builder.Build();
 

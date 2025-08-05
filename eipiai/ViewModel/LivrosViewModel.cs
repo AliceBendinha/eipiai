@@ -3,13 +3,13 @@
     public class LivrosViewModel
     {
         
-        public string Titulo { get; private set; }
+        public string? Titulo { get; set; }
         
-        public string Autor { get; private set; }
+        public string? Autor { get; set; }
         
-        public string Genero { get; private set; }
+        public string? Genero { get; set; }
         
-        public string Ano_Lancamento { get; private set; }
+        public int Ano_Lancamento { get; set; }
 
     }
 }

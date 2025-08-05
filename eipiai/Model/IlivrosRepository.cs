@@ -1,6 +1,6 @@
 ﻿namespace eipiai.Model
 {
-    public interface IlivrosRepository
+    public interface ILivrosRepository
     {
         void Add(Livros livros);
 

@@ -11,7 +11,7 @@ namespace eipiai.InfraExtrutura
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(
                 "Host=localhost;" +
-                "Port=5432;Database=livros_sample;" +
+                "Port=5432;Database=Library;" +
                 "Username=postgres;" +
                 "Password=9876;");
                 
