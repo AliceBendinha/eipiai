@@ -1,4 +1,5 @@
 ﻿using eipiai.Dominio.Model;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace eipiai.InfraExtrutura
