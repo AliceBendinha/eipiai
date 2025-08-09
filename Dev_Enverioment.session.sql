@@ -1,3 +1,1 @@
-INSERT INTO public.livros(
-	autor)
-	VALUES ('AUGUSTO CURY');
+SELECT *FROM livros

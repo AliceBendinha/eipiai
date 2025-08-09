@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using eipiai.Model;
+﻿using eipiai.Dominio.Model;
 
 
 namespace eipiai.InfraExtrutura
 {
     public class ConnectionContext : DbContext
     {
-        public DbSet <Livros> Livross { get; set; }
+        public DbSet<Livros> Livross { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseNpgsql(
@@ -14,6 +13,6 @@ namespace eipiai.InfraExtrutura
                 "Port=5432;Database=Library;" +
                 "Username=postgres;" +
                 "Password=9876;");
-                
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace eipiai.Model
+namespace eipiai.Dominio.Model
 {
     [Table("livros")]
 
@@ -9,15 +9,22 @@ namespace eipiai.Model
     public class Livros
     {
         [Key]
-        public int id { get; set; }
-        public string titulo { get; set; }
-        public string autor { get; set; }
-        public string genero { get; set; }
-        public int ano_lancamento { get; set; }
+        public int id { get; private set; }
+
+        [Required(ErrorMessage = "Obrigatório")]
+        public string titulo { get; private set; } = string.Empty;
+
+        [Required(ErrorMessage = "Obrigatório")]
+        public string autor { get; private set; } = string.Empty;
+
+        [Required(ErrorMessage = "Obrigatório")]
+        public string genero { get; private set; } = string.Empty;
+
+        public int ano_lancamento { get; private set; }
 
         public Livros() { }
 
-
+        //construtor
         public Livros(string titulo, string autor, string genero, int ano_lancamento)
         {
 
@@ -26,7 +33,7 @@ namespace eipiai.Model
             this.genero = genero;
             this.ano_lancamento = ano_lancamento;
         }
-        
+
         // Atualização de dados
         public void AtualizarDados(string titulo, string autor, string genero, int ano_lancamento)
         {

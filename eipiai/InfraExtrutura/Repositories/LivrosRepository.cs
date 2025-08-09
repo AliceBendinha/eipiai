@@ -1,6 +1,7 @@
-﻿using eipiai.Model;
+﻿using eipiai.Dominio.DTO;
+using eipiai.Dominio.Model;
 
-namespace eipiai.InfraExtrutura
+namespace eipiai.InfraExtrutura.Repositories
 {
     public class LivrosRepository : ILivrosRepository
     {
@@ -12,14 +13,26 @@ namespace eipiai.InfraExtrutura
             _context.SaveChanges();
         }
 
-        public List<Livros> Get()
+        public List<LivrosDTO> Get()
         {
-            return _context.Livross.ToList();
+            return _context.Livross
+
+            .Select(c =>
+            new LivrosDTO()
+            {
+                titulo = c.titulo,
+                autor = c.autor,
+                genero = c.genero,
+                ano_lancamento = c.ano_lancamento
+            }).ToList();
         }
 
         public Livros GetById(int id)
         {
-            return _context.Livross.FirstOrDefault(l => l.id == id);
+            var liv = _context.Livross.FirstOrDefault(l => l.id == id);
+            if (liv == null)
+                throw new KeyNotFoundException($"Livro com id {id} não encontrado.");
+            return liv;
         }
 
         public void Update(Livros livros)

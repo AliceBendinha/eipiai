@@ -1,10 +1,12 @@
-﻿namespace eipiai.Model
+﻿using eipiai.Dominio.DTO;
+
+namespace eipiai.Dominio.Model
 {
     public interface ILivrosRepository
     {
         void Add(Livros livros);
 
-        List<Livros> Get();
+        List<LivrosDTO> Get();
 
         Livros GetById(int id);
         void Update(Livros livros);
